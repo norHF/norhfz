@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilosAccesibilidad.css">
+    <title>Accesibilidad Web</title>
+    <!--Dada la siguiente página, mejora su accesibilidad teniendo en cuenta el marcado semántico-->
+</head>
+<body>
+    <header role="heading">
+        <h1>La accesibilidad Web</h1>
+        <nav role="navigation">
+            <ul role="menubar">
+                <li  class="active" role="menuitem"><a href="#accesibilidad1" role="link" aria-label="Barra de navegación - Inicio" class="enlaceMenu" tabindex="0">La Accesibilidad Web</a></li>
+                <li role="menuitem"><a href="#accesibilidad2" role="link" aria-label="Barra de navegación - Problemas de Accesibilidad" class="enlaceMenu" tabindex="0">Problemas de Accesibilidad</a></li>
+                <li role="menuitem"><a href="#accesibilidad3" role="link" aria-label="Barra de navegación - Problemas de Accesibilidad" class="enlaceMenu" tabindex="0">Soluciones de Accesibilidad</a></li>
+                <li role="menuitem"><a href="#accesibilidad4" role="link" aria-label="Barra de navegación - Soluciones de Accesibilidad" class="enlaceMenu" tabindex="0">Soluciones para el posicionamiento</a></li>
+            </ul>
+        </nav>
+
+    </header>
+<main>
+
+    <section>
+        <article id="accesibilidad1">
+            <div role="figure" aria-labelledby="caption" id="figura1" >
+                <img src="img/Accesibilidad-web1.jpg" alt="Ilustración sobre la accesibilidad web para ciegos, sordos y toda por persona con alguna discapacidad" tabindex="0" title="Accesibilidad Web" />
+                <figcaption aria-label="La accesibilidad web para todo tipo de discapacidad">La accesibilidad web para todo tipo de discapacidad</figcaption>
+              </div>
+              <div role="textbox" contenteditable="true" id="textarea1">
+                <h2 role="heading" tabindex="0" aria-label="¿Que es la accesibilidad web?">¿Que es la accesibilidad web?</h2>
+                <br>
+                <p>Desde hace años existen numerosas pautas (consejos) que ayudan a los desarrolladores web a crear sitios web accesibles. Las más famosas son las Pautas   de Accesibilidad al Contenido Web (Web Content Accessibility Guidelines) desarrolladas por el grupo <a href="https://www.w3.org/WAI/" aria-label="Visitar página de la W3C" title="Visitar página de la W3C" role="link">Web Accessibility Initiative del W3C.</a>
+                    <br>
+                    <br>
+                    Las “Pautas de Accesibilidad para el Contenido Web 2.0” (WCAG 2.0) [W3C, 2008] han sido desarrolladas por Web Accessibility Initiative, (WAI), organismo dependiente del W3C, y definen cómo crear contenido web accesible Introducción a la Accesibilidad Web: 
+                    La accesibilidad web significa que personas con algún tipo de discapacidad van a poder hacer uso de la Web. En concreto, al hablar de accesibilidad web se está haciendo referencia a un diseño web que va a permitir que estas personas puedan percibir, entender, navegar e interactuar con la Web, aportando a su vez contenidos. 
+                    <br>
+                    <br>
+                    La aplicación de la accesibilidad no sólo garantiza y facilita el uso a personas con discapacidad, sino también a otros colectivos como personas mayores e incluso jóvenes con menos habilidades digitales. Por lo tanto, beneficia a todo el mundo y agiliza el avance transversal de la tecnología.
+                    <br>
+                    <br>
+                    Por ley, la administración pública, las universidades y algunas empresas (como bancos, empresas de electricidad, de agua o servicios de transporte, entre otras) están obligadas a proporcionar su contenido web de forma accesible.
+                    </p>
+              </div>
+         </article>   
+         <hr>
+         <article id="accesibilidad2">
+            <h2 role="heading" tabindex="0" id="titulo2" aria-label="Ejemplos de problemas de accesibilidad">Ejemplos de problemas de accesibilidad</h2>
+            <div id="video">
+                <br>
+                <br>
+                <p  tabindex="0" aria-label="En el siguiente video podrás conocer sobre algunos problemas de accesibilidad web y como resolverlos">En el siguiente video podrás conocer sobre algunos problemas de accesibilidad web y como resolverlos</p>
+                <br>
+                <br>
+            <button onclick="playPause()" id="reproducir" tabindex="0" role="button" title="Reproducir/Pausar Video" aria-label="Boton reproducir video o pausar" >Reproducir/Pausar</button>
+            <!-- <button onclick="reload()" id="recargar"  role="button">Recargar Video</button> -->
+            <!-- <button onclick="makeLarge()" id="max" >Maximizar</button> -->
+            <!-- <button onclick="makeSmall()" id="min" >Minimizar</button> -->
+            <!-- <button onclick="makeNormal()" id="norm" >Normal</button> -->
+            <br><br>
+            <video id="videoPlayer" width="800" controls tabindex="0">
+            <source src="video/Ejemplos de problemas de accesibilidad.mp4" type="video/mp4">
+             </video>
+            <script> 
+                var video = document.getElementById("videoPlayer");
+                function playPause() { 
+                    if (video.paused) 
+                        video.play(); 
+                    else 
+                        video.pause(); 
+                }
+                // function reload() { 
+                //    video.load(); 
+                // }
+                // function makeLarge() { 
+                //     video.width = 1000; 
+                // }
+                // function makeSmall() { 
+                //     video.width = 250; 
+                // } 
+                // function makeNormal() { 
+                //     video.width = 800; 
+                // } 
+                </script>
+                </video>
+            </div>
+
+        </article> 
+        <hr>
+
+        <article id="accesibilidad3">
+            <h2 role="heading" tabindex="0" id="titulo3" aria-label="Pautas para un diseño de sitio web accesible">Pautas para un diseño de sitio web accesible (Easy-Checks)</h2>
+            <br>
+            <div class="tab">
+                <button class="tablinks" onclick="AbrirTab(event, 'meta')" tabindex="0" id="btn" aria-label="boton para ver las pautas del meta title">Metatitle</button>
+                <button class="tablinks" onclick="AbrirTab(event, 'texto')" tabindex="0" aria-label="boton para ver las pautas del texto alternativo">Texto alternativo (Alt text)</button>
+                <button class="tablinks" onclick="AbrirTab(event, 'titulos')" tabindex="0" aria-label="boton para ver las pautas de los títulos">Títulos</button>
+                <button class="tablinks" onclick="AbrirTab(event, 'contraste')" tabindex="0" aria-label="boton para ver las pautas del contraste en imagenes">Relación de contraste</button>
+                <button class="tablinks" onclick="AbrirTab(event, 'escalabilidad')" tabindex="0" aria-label="boton para ver las pautas del cambio del tamaño en texto">Escalabilidad del texto</button>
+          
+              </div>
+              
+              <!-- Tab content -->
+              <div id="meta" class="tabcontent" tabindex="0">
+                <h3 role="heading">Metatitle</h3>
+                <p class="tabP" aria-label="descripcion de las pautas del meta title">Los buenos títulos de las páginas son particularmente importantes para la orientación, para ayudar a las personas a saber dónde están y moverse entre las páginas abiertas en su navegador. Lo primero que dicen los lectores de pantalla cuando el usuario va a una página web diferente es el título de la página.
+                <br>
+                <br>
+                • Se muestra en la barra de título de la ventana en algunos navegadores
+                <br>
+                • Se muestra en las pestañas de los navegadores cuando hay varias páginas web abiertas
+                <br>
+                • Se muestra en los resultados de los motores de búsqueda
+                <br>
+                • Se utiliza para los marcadores/favoritos del navegador
+                <br>    
+                • Leído por lectores de pantalla</p>
+              </div>
+              
+              <div id="texto" class="tabcontent" tabindex="0">
+                <h3 role="heading" tabindex="0">Texto alternativo (Alt text)</h3>
+                <p class="tabP" aria-label="descripcion de las pautas del texto alternativo">Las alternativas de texto ("texto alternativo") transmiten el propósito de una imagen, incluidas imágenes, ilustraciones, gráficos, etc. Las alternativas de texto son utilizadas por personas que no ven la imagen. (Por ejemplo, las personas ciegas que usan lectores de pantalla pueden escuchar la lectura del texto alternativo; y las personas que han desactivado las imágenes para acelerar la descarga o ahorrar ancho de banda pueden ver el texto alternativo).
+                El texto debe ser funcional y proporcionar una experiencia de usuario equivalente, no necesariamente describir la imagen. (Por ejemplo, la alternativa de texto apropiada para un botón de búsqueda sería "buscar", no "lupa").
+                    <br>
+                    <br>
+                    <b>Lo que hay que comprobar:</b>
+                    Cada imagen tiene un texto alternativo apropiado.alt
+              </div>
+              
+              <div id="titulos" class="tabcontent" tabindex="0">
+                <h3 role="heading">Títulos</h3>
+                <br>
+                <p class="tabP" aria-label="descripcion de las pautas de los títulos o encabezados">Las páginas web suelen tener secciones de información separadas por encabezados visuales; por ejemplo, el texto del encabezado es más grande y en negrita, de esa manera, las personas pueden navegar hasta los encabezados, incluidas las personas que no pueden usar un mouse y solo usan el teclado, y las personas que usan un lector de pantalla.
+                    <br>
+                    •Nivel de encabezado 1 &lt;h1&gt;
+                    <br> 
+                    • Nivel de encabezado 2 &lt;h2&gt; 
+                    <br> 
+                    • Nivel de encabezado 3 &lt;h3&gt; 
+                    <br>
+                    <br>
+                    
+                    <b>Lo que hay que comprobar:</b>
+                    Todo el texto que parece un título está marcado como título.
+                    <br>
+                     • Todo el texto marcado como título es en realidad un título de sección conceptual.
+                    <br>
+                     • La jerarquía de títulos es significativa. 
+                     <br>
+                     • Lo ideal es que la página comience con un "h1", que suele ser similar al título de la página, y no se salte niveles; sin embargo, estos no son requisitos absolutos.                </p>
+                </p>
+              </div>
+
+              <div id="contraste" class="tabcontent" tabindex="0">
+                <h3 role="heading">Relación de contraste</h3>
+                <br>
+                <p class="tabP" aria-label="descripcion de las pautas del contraste en imagenes">Algunas personas no pueden leer el texto si no hay suficiente contraste entre el texto y el fondo, por ejemplo, texto gris claro sobre un fondo claro, algunas personas con discapacidad visual, incluidas muchas personas mayores que pierden sensibilidad al contraste con el envejecimiento, necesitan un alto contraste.
+                <br>
+                <br>
+                Los navegadores web deberían permitir a las personas cambiar el color del texto y el fondo, y las páginas web deben funcionar cuando las personas cambian de color (Este requisito de accesibilidad a veces se denomina "contraste de color" suficiente; sin embargo, eso es incorrecto; técnicamente es "contraste de luminancia".</p>
+              </div>
+              
+              <div id="escalabilidad" class="tabcontent" tabindex="0">
+                <h3 role="heading">Escalabilidad del texto</h3>
+                <p class="tabP" aria-label="descripcion de las pautas del cambio del tamaño en texto">Algunas personas necesitan ampliar el contenido web para poder leerlo. Algunos necesitan cambiar otros aspectos de la visualización del texto: fuente, espacio entre líneas y más. 
+                <br>
+                <br>
+                La mayoría de los navegadores permiten a los usuarios cambiar el tamaño del texto a través de: 
+                <br>
+                • configuración del tamaño del texto (generalmente a través de Opciones o Preferencias) 
+                <br>
+                • zoom de solo texto • zoom de página (que también amplía imágenes, botones, etc.) 
+                <br>
+                <br>
+                Cuando las páginas no están diseñadas correctamente, pueden quedar inutilizables cuando se cambia el tamaño del texto, especialmente cuando se cambia mediante el zoom de solo texto o la configuración de texto, cuando se aumenta el tamaño del texto, a veces parte de las oraciones no son visibles y los usuarios tienen que desplazarse horizontalmente para leer una oración</p>
+            </div>
+            <br>
+            <div class="tab">
+                <button class="tablinks" onclick="AbrirTab(event, 'teclado')" tabindex="0" aria-label="boton para ver las pautas de la accesibilidad a través del teclado">Accesibilidad a través del teclado</button>
+                <button class="tablinks" onclick="AbrirTab(event, 'movimiento')" tabindex="0" aria-label="boton para ver las pautas del contenido en movimiento">Contenido en movimiento</button>
+                <button class="tablinks" onclick="AbrirTab(event, 'multimedia')" tabindex="0" aria-label="boton para ver las pautas de los contenidos multimedia">Alternativas multimedia</button>
+                <button class="tablinks" onclick="AbrirTab(event, 'estructura')" tabindex="0" aria-label="boton para ver las pautas de la estructura de la página web">Estructura de la página web</button>
+              </div>
+
+
+              <div id="teclado" class="tabcontent" tabindex="0">
+                <h3 role="heading" >Accesibilidad a través del teclado</h3>
+                <p class="tabP" aria-label="descripcion de las pautas de la accesibilidad a través del teclado">Mucha gente no puede utilizar un ratón y depende del teclado para interactuar con la Web. Las personas ciegas y algunas personas videntes con problemas de movilidad dependen del teclado o de tecnologías y estrategias de asistencia que se basan en comandos del teclado, como la entrada de voz. Los sitios web accesibles permiten a las personas acceder a todo el contenido y las funciones (enlaces, formularios, controles multimedia, etc.) a través de un teclado.
+                <br>
+                El foco del teclado debe ser visible y debe seguir un orden lógico a través de los elementos de la página. El foco visible del teclado podría ser un borde o resaltado, como se muestra a continuación, que se mueve a medida que avanza por la página web.
+                <br>
+                <br>
+                <b>Qué hacer:</b> En un navegador que admita navegación mediante teclado con la tecla Tab (por ejemplo, Firefox, IE, Chrome y Safari; no Opera).
+                <br>
+                <br>
+                <b>Qué comprobar:</b> 
+                <br>
+                <br>
+                • Tabulador para todos: compruebe que puede tabular todos los elementos, incluidos enlaces, campos de formulario, botones y controles del reproductor multimedia. (Un problema común es que no puede acceder a los controles del reproductor multimedia).
+                </p>
+              </div>
+
+              <div id="movimiento" class="tabcontent" tabindex="0">
+                <h3 role="heading">Contenido en movimiento</h3>
+                <p class="tabP" aria-label="descripcion de las pautas del contenido en movimiento">El contenido en movimiento, intermitente o parpadeante incluye carruseles ( por ejemplo, carrusel ), anuncios, vídeos, tickets de acciones con actualización automática, fuentes de noticias con desplazamiento y más. Los usuarios deben poder controlar el contenido en movimiento, especialmente algunas personas con trastorno por déficit de atención o trastornos del procesamiento visual.
+                    <br>
+                    <br>
+                    Los posibles problemas de accesibilidad con contenido en movimiento, intermitente o parpadeante incluyen: 1. Comprender la información en movimiento: algunas personas leen y procesan la información lentamente. El contenido puede desaparecer antes de que la gente tenga tiempo de leerlo. 
+                    <br>
+                    <br>
+                    Algunas personas tienen dificultades para seguir objetos en movimiento. 2. Distracción del contenido en movimiento: el contenido en movimiento puede dificultar la concentración y la lectura en otros lugares; es decir, las personas no pueden centrarse en algún contenido porque el movimiento en otra área de la página web les llama la atención.
+                    <br>
+                    <br>
+                    <b>Qué comprobar:</b>
+                    <br>
+                    <br>
+                    • Compruebe si hay información en movimiento, parpadeante o desplazándose que se inicia automáticamente y dura más de cinco segundos. Si es así, verifique que haya una manera para que el usuario pueda pausar, detener u ocultar el movimiento.
+                    <br>
+                    <br>
+                    • Compruebe si hay información actualizada automáticamente (como el precio de las acciones). Si es así, verifique que haya una manera para que el usuario pueda pausar, detener u ocultar la información actualizada, o para que el usuario controle la frecuencia de la actualización. • Compruebe que ningún contenido parpadee o parpadee más de tres veces en un segundo. Si es así, se necesita una evaluación adicional como se explica en Tres destellos o por debajo del umbral .
+                </p>
+              </div>
+
+              <div id="multimedia" class="tabcontent" tabindex="0">
+                <h3 role="heading">Alternativas multimedia</h3>
+                <p class="tabP" aria-label="descripcion de las pautas de los contenidos multimedia">La información contenida en podcasts u otros audios no está disponible para personas sordas o con problemas de audición, a menos que se proporcione en un formato alternativo, como subtítulos y transcripciones de texto. La información visual de los vídeos no está disponible para personas ciegas o con baja visión, a menos que se proporcione en un formato alternativo, como audio o texto. (El texto puede leerse mediante un lector de pantalla o una pantalla Braille, o ampliarse y reformatearse para personas con baja visión). (Recuerde que estas comprobaciones sencillas no son exhaustivas ni definitivas).
+                <br>
+                <br>
+                <b>Qué comprobar:</b> 
+                <br>
+                Acceso al teclado Siga los pasos anteriores para acceder al teclado y asegurarse de que los controles del reproductor multimedia estén etiquetados y sean accesibles desde el teclado. 
+                <br>
+                <br>
+                <b>Control de inicio automático:</b> Es mejor si el audio (incluido el ruido de fondo y el vídeo con sonido) no se inicia automáticamente cuando se abre una página web. Si se inicia automáticamente, debería:
+                <br>
+                • Deténgase después de 3 segundos. 
+                <br>
+                • Incluye controles para pausar o detener el audio. 
+                <br>
+                • Incluye controles para bajar el volumen.
+                <br>
+                <br>
+                <b>Subtítulos:</b> La mayoría de los vídeos en la web que proporcionan subtítulos tienen "subtítulos" que se pueden activar y desactivar. (Siempre se muestran los subtítulos abiertos).
+                <br>
+                Si hay subtítulos, puedes comprobar que:
+                <br>
+                • Los subtítulos parecen sincronizados con el contenido hablado.
+                <br>
+                • Las personas que hablan se identifican cuando hablan.
+                <br>
+                • Se incluyen sonidos importantes distintos del diálogo (p. ej., pasos que se acercan, puertas que se cierran, cristales que se rompen).
+                <br>
+                <br>
+                <b>Transcripción:</b> Es una buena práctica proporcionar subtítulos y transcripciones, aunque no siempre es obligatorio; Proporcionar transcripciones tiene muchos beneficios , tanto para las personas con discapacidades como para los propietarios de sitios web.
+                </p>
+              </div>
+
+              <div id="estructura" class="tabcontent" tabindex="0">
+                <h3 role="heading">Estructura de la página web</h3>
+                <p class="tabP" aria-label="descripcion de las pautas de una página web">Las páginas web a menudo se diseñan con varias columnas, secciones, colores y otros aspectos visuales que ayudan a organizar la información para las personas que ven la página en su visualización predeterminada. Sin embargo, algunas personas no ven la página de esta manera. Las personas ciegas escuchan la página con un lector de pantalla o la leen desde una pantalla Braille. Algunas personas con baja visión y otras cambian la forma en que se muestra la página para poder leerla; Por ejemplo, cambiar de varias columnas a una columna, cambiar el tamaño del texto y mucho más. Un tema importante es cómo funciona la página web cuando se "linealiza" en una columna y se cambia la presentación.
+                <br>
+                Si bien es útil que un usuario experimentado de lectores de pantalla revise las páginas web, cualquiera puede tener una idea inicial de las posibles barreras de accesibilidad para los usuarios de lectores de pantalla.
+                <br>
+                <br>
+                <b>Qué hacer:</b> Para obtener una vista de estructura básica de la página, siga las instrucciones de Comprobaciones de estructura básica que aparecen a continuación:
+                <br>
+                • Desactive las imágenes y muestre las alternativas de texto.
+                <br>
+                • Desactive las hojas de estilo (CSS), que especifican cómo se muestra la página con el diseño, los colores, etc. 
+                <br>
+                • Linealice la página o las tablas (dependiendo de la barra de herramientas).
+                <br>
+                <br>
+                <b>Lo que hay que comprobar:</b>
+                <br> 
+                • Verifique que la información tenga sentido cuando se lee en el orden en que se muestra; Por ejemplo, los encabezados están justo encima de la información a la que se aplican. (No es necesario que las tablas de datos tengan sentido linealizadas, según la nota anterior).
+                <br>
+                • Compruebe que el texto alternativo proporciona información adecuada para las imágenes que faltan
+                </p>
+              </div>
+
+
+              <script>
+                function AbrirTab(evt, cityName) {
+                // Declare all variables
+                var i, tabcontent, tablinks;
+
+                // Get all elements with class="tabcontent" and hide them
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+
+                // Get all elements with class="tablinks" and remove the class "active"
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+
+                // Show the current tab, and add an "active" class to the button that opened the tab
+                document.getElementById(cityName).style.display = "block";
+                evt.currentTarget.className += " active";
+
+                
+            } 
+
+    
+              </script>
+
+        </article>
+
+
+        <article id="accesibilidad4">
+            <h2 role="heading" tabindex="0" id="titulo4">Sugerencias para mejorar el posicionamiento de la página web</h2>
+
+            <div id="contenedorTarjetas">
+            <div role="columnheader" scope="col" class="tarjeta" id="card" tabindex="0">
+
+                <div role="figure" aria-labelledby="caption" class="imgCard" >
+                    <img src="img/texto-icono.png" alt="Icono de página web con texto" id="img1"/>
+                  </div>
+                  <div role="textbox" contenteditable="true" id="textarea1">
+                    <h4 role="heading" aria-label="¿Describe con precisión el contenido de la página">Describe con precisión el contenido de la página</h4>
+                    <br>
+                    <p class="hacer" aria-label="Para mejorar el posicionamiento debes hacer">Elige un título que indique claramente el tema de la página</p>
+                    <br>
+                    <hr>
+                    <br>
+                    <p class="evitar" aria-label="Para mejorar el posicionamiento debes evitar">Evita</p>
+                    
+                        <p class="evitarTexto">• Un titulo que no tenga ninguna relación con el contenido de la página</p>
+                        <br>
+                        <p class="evitarTexto">• El uso de títulos predeterminados o demasiado genéricos como "Sin título" o "Página nueva"</p>
+                    
+                  </div>
+            </div> 
+
+            <div role="columnheader" scope="col" class="tarjeta" id="card" tabindex="0">
+                <div role="figure" aria-labelledby="caption" class="imgCard" >
+                    <img src="img/programacion-icono.png" alt="Icono de programacion y diseño web"  id="img2"/>
+                  </div>
+                  <div role="textbox" contenteditable="true" id="textarea1">
+                    <h4 role="heading" aria-label="Crea etiquetas title únicas para cada página página">Crea etiquetas title únicas para cada página página</h4>
+                    <br>
+                    <p class="hacer" aria-label="Para mejorar el posicionamiento debes hacer">Lo ideal es que cada una de tus páginas tenga una etiqueta title única, que ayude a google a distinguir esa página del resto de las demás del sitio</p>
+                    <br>
+                    <hr>
+                    <br>
+                    <p class="evitar" aria-label="Para mejorar el posicionamiento debes evitar">Evita</p>
+                    
+                        <p class="evitarTexto">• El uso de una sola etiqueta title para todas las páginas de tu sitio o para muchas de ellas</p>
+                        <br>
+                    </div>
+                </div> 
+
+                <div role="columnheader" scope="col" class="tarjeta" id="card" tabindex="0">
+                    <div role="figure" aria-labelledby="caption" class="imgCard" >
+                        <img src="img/computadora-icono.png" alt="Icono de programacion y diseño web" id="img3"/>
+                      </div>
+                      <div role="textbox" contenteditable="true" id="textarea1">
+                        <h4 role="heading" aria-label="títulos descriptivos breves">Usa títulos descriptivos breves</h4>
+                        <br>
+                        <p class="hacer" aria-label="Para mejorar el posicionamiento debes hacer que">Los títulos pueden ser concisos pero informativos, si el título es demasiado largo google mostrará tan solo una parte del mismo en el resultado de la búsqueda</p>
+                        <br>
+                        <hr>
+                        <br>
+                        <p class="evitar" aria-label="Para mejorar el posicionamiento debes evitar">Evita</p>
+                        
+                            <p class="evitarTexto">• No uses títulos muy largos que no sean útiles para los usuarios</p>
+                            <br>
+                            <p class="evitarTexto">• No rellenes las etiquetas title con palabras clave innecesarias</p>
+                        </div>
+                    </div>
+            </div>
+           
+        </article>    
+    </section>
+  
+   
+        
+   
+
+    <!-- <a href="#" role="link" aria-label="Leer más sobre la noticia" tabindex="1">Leer más</a>
+
+    <button onclick="saludar()" aria-label="saludar" title="saludar">Saludar</button>
+    <script>
+         saludar=()=>{alert("Hola")}
+    </script> -->
+
+</main>
+<footer>
+    <p>Norlan Hernandez <br>Prueba de accesibilidad 2024</p>
+</footer>
+</body>
+</html>
