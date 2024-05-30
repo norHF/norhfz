@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilosAccesibilidad.css">
+    <title>Accesibilidad Web</title>
+    <!--Dada la siguiente página, mejora su accesibilidad teniendo en cuenta el marcado semántico-->
+</head>
+<body>
+    <header role="heading" tabindex="1">
+        <h1 tabindex="2" role="heading" aria-level="1">La accesibilidad Web</h1>
+        <nav role="navigation" tabindex="3">
+            <ul role="menubar" tabindex="4">
+                <li tabindex="4" class="active"><a href="#" role="link" aria-label="Ir a la sección" class="enlaceMenu">Inicio</a></li>
+                <li tabindex="5"><a href="#" role="link" aria-label="Ir a la sección" class="enlaceMenu">Inicio</a></li>
+                <li tabindex="6"><a href="#" role="link" aria-label="Ir a la sección" class="enlaceMenu">Inicio</a></li>
+                <li tabindex="7"><a href="#" role="link" aria-label="Ir a la sección" class="enlaceMenu">Inicio</a></li>
+            </ul>
+        </nav>
+
+    </header>
+<main>
+
+    <section>
+        <article id="accesibilidad1">
+            <div role="figure" aria-labelledby="caption" tabindex="9" id="figura1">
+                <img src="img/Accesibilidad-web1.jpg" alt="Ilustración sobre la accesibilidad web para ciegos, sordos y toda por persona con alguna discapacidad" />
+                <p id="caption">La accesibilidad web para todo tipo de discapacidad</p>
+              </div>
+              <div role="textbox" contenteditable="true" aria-multiline="true" id="textarea1">
+                <h2 role="heading" aria-level="2" tabindex="8">¿Que es la accesibilidad web?</h2>
+                <br>
+                <p tabindex="10">Desde hace años existen numerosas pautas (consejos) que ayudan a los desarrolladores web a crear sitios web accesibles. Las más famosas son las Pautas   de Accesibilidad al Contenido Web (Web Content Accessibility Guidelines) desarrolladas por el grupo <a href="https://www.w3.org/WAI/" role="link" aria-label="Ir a la página web de la Web Accessibility Initiative del W3C">Web Accessibility Initiative del W3C.</a> 
+                    <br>
+                    <br>
+                    Las “Pautas de Accesibilidad para el Contenido Web 2.0” (WCAG 2.0) [W3C, 2008] han sido desarrolladas por Web Accessibility Initiative, (WAI), organismo dependiente del W3C, y definen cómo crear contenido web accesible Introducción a la Accesibilidad Web: 
+                    La accesibilidad web significa que personas con algún tipo de discapacidad van a poder hacer uso de la Web. En concreto, al hablar de accesibilidad web se está haciendo referencia a un diseño web que va a permitir que estas personas puedan percibir, entender, navegar e interactuar con la Web, aportando a su vez contenidos. 
+                    <br>
+                    <br>
+                    La aplicación de la accesibilidad no sólo garantiza y facilita el uso a personas con discapacidad, sino también a otros colectivos como personas mayores e incluso jóvenes con menos habilidades digitales. Por lo tanto, beneficia a todo el mundo y agiliza el avance transversal de la tecnología.
+                    <br>
+                    <br>
+                    Por ley, la administración pública, las universidades y algunas empresas (como bancos, empresas de electricidad, de agua o servicios de transporte, entre otras) están obligadas a proporcionar su contenido web de forma accesible.
+                    </p>
+              </div>
+         </article>   
+         <hr>
+         <article id="accesibilidad2">
+            <h2 role="heading" aria-label="2" tabindex="11" id="titulo2">Ejemplos de problemas de accesibilidad</h2>
+            <div id="video">
+            <button onclick="playPause()" id="reproducir" tabindex="12">Reproducir/Pausar</button>
+            <button onclick="reload()" id="recargar" tabindex="13">Recargar</button>
+            <!-- <button onclick="makeLarge()" id="max" tabindex="14">Maximizar</button> -->
+            <!-- <button onclick="makeSmall()" id="min" tabindex="15">Minimizar</button> -->
+            <!-- <button onclick="makeNormal()" id="norm" tabindex="16">Normal</button> -->
+            <br><br>
+            <video id="videoPlayer" width="800">
+            <source src="video/Ejemplos de problemas de accesibilidad.mp4" type="video/mp4">
+            <script> 
+                var video = document.getElementById("videoPlayer");
+                function playPause() { 
+                    if (video.paused) 
+                        video.play(); 
+                    else 
+                        video.pause(); 
+                }
+                function reload() { 
+                   video.load(); 
+                }
+                // function makeLarge() { 
+                //     video.width = 1000; 
+                // }
+                // function makeSmall() { 
+                //     video.width = 250; 
+                // } 
+                // function makeNormal() { 
+                //     video.width = 800; 
+                // } 
+                </script>
+                </video>
+            </div>
+
+        </article>     
+    </section>
+
+
+    <!-- <a href="#" role="link" aria-label="Leer más sobre la noticia" tabindex="1">Leer más</a>
+
+    <button onclick="saludar()" aria-label="saludar" title="saludar">Saludar</button>
+    <script>
+         saludar=()=>{alert("Hola")}
+    </script> -->
+
+</main>
+<footer>
+    <p>Norlan Hernandez <br>Prueba de accesibilidad 2025</p>
+</footer>
+</body>
+</html>
